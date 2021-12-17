@@ -1,0 +1,16 @@
+.footer-icon{
+    background-color: rgba(0, 0, 0, 0.212);
+    padding: 10px;
+    display: flex;
+    justify-content: space-evenly;
+}
+.footer-icon span{
+    font-size: 25px;
+    color: rgb(204, 204, 197);
+    margin-right: 10px;
+}
+.footer-icon span:hover{
+    color: rgb(27, 199, 27);
+    border-bottom: 3px solid rgb(27, 199, 27);
+    cursor: pointer;
+}
