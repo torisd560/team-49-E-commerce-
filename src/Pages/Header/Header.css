@@ -1,0 +1,12 @@
+.nav-item a{
+    margin-left: 25px;
+    font-weight: 600;
+}
+.custom-text-warning{
+    color: rgb(252, 127, 55);
+}
+.custom-button{
+    background-color: rgb(252, 127, 55);
+    color: cornsilk;
+    border: 0;
+}
