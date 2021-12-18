@@ -6,6 +6,7 @@ import useFirebase from '../hooks/useFirebase';
 
 const Login = () => {
     const {googleSign} = useFirebase;
+    
     return (
         <div className='login-page'>
                 <img src={loginBg} alt="" />
