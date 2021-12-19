@@ -1,8 +1,12 @@
 import React from 'react';
 import { Button, Card, Col } from 'react-bootstrap';
+import { useDispatch } from 'react-redux';
+import {removeFromCart} from '../../../redux/slices/productSlices'
 
-const singleCartItem = ({ product }) => {
+const SingleCartItem = ({ product }) => {
     const { img, product_name, price, description } = product
+    const dispatch = useDispatch();
+
 
     return (
         <div>
@@ -15,7 +19,7 @@ const singleCartItem = ({ product }) => {
                             {description.slice(0, 100)}.
                         </Card.Text>
                         <div className=' d-flex justify-content-between align-items-center'>
-                            <Button className='custom-button rounded-pill'>Remove</Button>
+                            <Button  onClick={() => dispatch(removeFromCart(product.id))} className='custom-button rounded-pill'>Remove</Button>
                             <h6 className='custom-text-primary'> ${price}.00</h6>
                         </div>
                     </Card.Body>
@@ -25,4 +29,4 @@ const singleCartItem = ({ product }) => {
     );
 };
 
-export default singleCartItem;
+export default SingleCartItem;
