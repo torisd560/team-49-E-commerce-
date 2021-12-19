@@ -2,7 +2,7 @@ import React from 'react';
 import './Header.css'
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import logoImg from '../../images/logo.png'
+import logoImg from '../../images/logo-1.png'
 import { useSelector } from 'react-redux';
 
 const Header = () => {
@@ -12,7 +12,7 @@ const Header = () => {
         <Navbar collapseOnSelect expand="lg" bg="light" variant="light" className = 'p-2'>
             <Container>
                 <Navbar.Brand href="#home">
-                    <img src={logoImg} alt="" />
+                    <img src={logoImg} alt="" style= {{width: '250px'}} />
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
