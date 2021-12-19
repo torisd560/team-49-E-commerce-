@@ -1,0 +1,11 @@
+.top-banner{
+    background-image: url(".../../../../images/top-banner1.jpg");
+    padding: 100px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    color: rgb(51, 50, 50);
+
+}
+.top-banner h1{
+    font-size: 60px;
+}
