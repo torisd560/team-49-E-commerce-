@@ -19,7 +19,7 @@ const Header = () => {
                     <Nav className="ms-auto nav-item">
                         <Nav.Link as={Link} to='/home'>Home</Nav.Link>
                         <Nav.Link as={Link} to='/contact'>Contact</Nav.Link>
-                        <Nav.Link as={Link} to='/cart' ><i className="fas fa-shopping-cart custom-text-warning fs-5"></i><sup name="badge bg-danger">{cartList.length}</sup></Nav.Link>
+                        <Nav.Link as={Link} to='/cart' ><i className="fas fa-shopping-cart custom-text-warning fs-5"></i><sup className="translate-middle badge rounded-pill bg-dark translate-middle-y">{cartList.length}</sup></Nav.Link>
                         <Nav.Link as={Link} to='/login'><i className="far fa-user custom-text-warning me-2 fs-5"></i></Nav.Link>
                         <Nav.Link as={Link} to='/login'><i className="fas fa-sign-in-alt custom-text-warning me-2 fs-5"></i>Login</Nav.Link>
                     </Nav>
