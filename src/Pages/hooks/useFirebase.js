@@ -28,29 +28,32 @@ const useFirebase = () => {
   // user observer functionality
 
   useEffect(() => {
-    onAuthStateChanged(auth, (user) => {
+    const unsubcribed = onAuthStateChanged(auth, user => {
       if (user) {
         setUser(user)
-      } else {
-
       }
-    });
+      else {
+        setUser({})
+      }
+    })
+    return () => unsubcribed;
   }, [auth])
 
   // Logout functionality
 
-  const LogOut = () => {
+  const logOut = () => {
     signOut(auth).then(() => {
       setUser({})
-    }).catch((error) => {
-      setError(error.message)
-    });
+    })
+      .catch((error) => {
+        setError(error.message)
+      });
   }
 
 
   return {
     googleSign,
-    LogOut,
+    logOut,
     user,
     error
   }
