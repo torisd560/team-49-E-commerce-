@@ -1,9 +1,11 @@
 import React from 'react';
 import { Button, Col } from 'react-bootstrap';
+import {useDispatch} from 'react-redux'
+import {addToCart} from '../../../redux/slices/productSlices'
 
 const Product = ({ product }) => {
     const { img, product_name, price } = product
-
+   const dispatch =useDispatch()
 
     return (
         <Col >
@@ -11,7 +13,7 @@ const Product = ({ product }) => {
                 <img src={img} alt="" className=' img-fluid' style={{width : '300px', height : '300px'}} />
                 <h5>{product_name}</h5>
                 <h5>$ {price}</h5>
-                <Button className = 'custom-button'>Add to Cart</Button>
+                <Button onClick ={() => dispatch(addToCart(product))} className = 'custom-button'>Add to Cart</Button>
             </div>
         </Col>
 
