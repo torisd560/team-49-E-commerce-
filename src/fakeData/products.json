@@ -46,7 +46,8 @@
       "id": 7,
       "product_name": "Surgical Mask",
       "img": "https://stepmeds.vercel.app/images/product/product6.jpg",
-      "description": "Order top products for your research available from Merck today. 500+ strategic services. Research Protocols. 300,000+ products. Applications & Techniques. Peer-reviewed papers. Tools for Research. Brands: Sigma-Aldrich, Millipore, SAFC, Milli-Q, Supelco, BioReliance, Roche."
+      "description": "Order top products for your research available from Merck today. 500+ strategic services. Research Protocols. 300,000+ products. Applications & Techniques. Peer-reviewed papers. Tools for Research. Brands: Sigma-Aldrich, Millipore, SAFC, Milli-Q, Supelco, BioReliance, Roche.",
+      "price" : 47.00
     },
     {
       "id": 8,

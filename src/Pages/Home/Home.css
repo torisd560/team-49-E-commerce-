@@ -1,11 +1,15 @@
 .top-banner{
     background-image: url(".../../../../images/top-banner1.jpg");
-    padding: 100px;
     background-repeat: no-repeat;
-    background-size: contain;
-    color: rgb(51, 50, 50);
+    background-size: cover;
+    color:  #222;
 
 }
-.top-banner h1{
-    font-size: 60px;
+.banner-items{
+    padding: 100px;
+}
+.banner-items h1{
+    font-size: 64px;
+    line-height: 80px;
+    font-weight: 500;
 }

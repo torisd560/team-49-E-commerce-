@@ -1,19 +1,21 @@
 import React from 'react';
-import { Row } from 'react-bootstrap';
+import { Container, Row } from 'react-bootstrap';
 import { useSelector } from 'react-redux';
-import Product from '../Products/Product/Product';
+import SingleCartItem from './SingleCartItem/SingleCartItem'
 
 const Cart = () => {
     const cartList = useSelector((state) => state.products.cartList)
 
     return (
         <div>
-            <Row xs={1} md={4} className="g-4 my-5">
-                {
-                    cartList?.map(product => <Product product={product} key={product.id}></Product>)
-                }
-            </Row>
-            <h1>This is cart</h1>
+            <Container>
+                <h1 className = 'my-5 text-center custom-text-primary '>All your orders here!</h1>
+                <Row xs={1} md={3} className="g-4 my-5">
+                    {
+                        cartList?.map(product => <SingleCartItem product={product} key={product.id} />)
+                    }
+                </Row>
+            </Container>
         </div>
     );
 };

@@ -12,7 +12,7 @@ const Login = () => {
             <Header></Header>
             <div className='text-center w-50 mx-auto'>
                 <img src={loginBg} alt="" className='img-fluid' />
-                <Button onClick={googleSign} variant='outline-primary' className='b-0'>Google SignIn</Button>
+                <Button onClick={googleSign}  className='custom-button rounded-pill me-5'>Google Signin</Button>
             </div>
             <Footer></Footer>
         </div>

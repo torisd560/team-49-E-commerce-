@@ -2,11 +2,14 @@
     margin-left: 25px;
     font-weight: 600;
 }
-.custom-text-warning{
-    color: rgb(252, 127, 55);
+.custom-text-primary{
+    color: #4c80fa;
 }
 .custom-button{
-    background-color: rgb(252, 127, 55);
-    color: cornsilk;
+    background-color: #4c80fa;
+    color: #fff8dc;
     border: 0;
+    padding: 10px 15px;
+    font-weight: 600;
+
 }

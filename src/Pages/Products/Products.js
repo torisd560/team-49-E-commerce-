@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row } from 'react-bootstrap';
+import { Container, Row } from 'react-bootstrap';
 import { useSelector } from 'react-redux';
 import Product from './Product/Product';
 
@@ -10,11 +10,14 @@ const Products = () => {
 
     return (
         <div>
-            <Row xs={1} md={4} className="g-4 my-5">
-                {
-                    products?.map(product => <Product product={product} key={product.id}></Product>)
-                }
-            </Row>
+            <Container>
+                <h1 className = 'my-5 text-center '>Unmissed Products</h1>
+                <Row xs={1} md={3} className="g-4 my-5">
+                    {
+                        products?.map(product => <Product product={product} key={product.id}></Product>)
+                    }
+                </Row>
+            </Container>
         </div>
     );
 };
