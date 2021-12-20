@@ -13,7 +13,7 @@ const productSlice = createSlice({
          state.cartList.push(payload)
         },
         removeFromCart: (state , { payload }) => {
-          state.cartList = state.cartList.filter(product => product.id !== payload.id)
+          state.cartList = state.cartList.filter(product => product.id !== payload)
         }
       }
     })

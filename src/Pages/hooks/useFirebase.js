@@ -8,24 +8,30 @@ initializeFirebaseAuth()
 const useFirebase = () => {
   const [user, setUser] = useState({})
   const [error, setError] = useState('')
+  const [isLoading, setIsLoading] = useState(true)
 
   const googleProvider = new GoogleAuthProvider();
   const auth = getAuth();
 
-  // google sign in functionality
+  //================= google sign in functionality======================
 
-  const googleSign = () => {
-
+  const googleSign = (navigate, location) => {
+    setIsLoading(true)
     signInWithPopup(auth, googleProvider)
       .then((result) => {
         setUser(result.user);
-        console.log(result)
+        navigate(location?.state?.from || "/")
+        setError("")
+
 
       }).catch((error) => {
         setError(error.message)
+      })
+      .finally(() => {
+        setIsLoading(false);
       });
   }
-  // user observer functionality
+  // ====================user observer state functionality==================
 
   useEffect(() => {
     const unsubcribed = onAuthStateChanged(auth, user => {
@@ -35,18 +41,25 @@ const useFirebase = () => {
       else {
         setUser({})
       }
+      setIsLoading(false);
     })
     return () => unsubcribed;
   }, [auth])
 
-  // Logout functionality
+  //============= Logout functionality=================
 
   const logOut = () => {
-    signOut(auth).then(() => {
-      setUser({})
-    })
+    setIsLoading(true)
+    signOut(auth)
+      .then(() => {
+        setUser({})
+        setError("")
+      })
       .catch((error) => {
         setError(error.message)
+      })
+      .finally(() => {
+        setIsLoading(false);
       });
   }
 
@@ -55,7 +68,8 @@ const useFirebase = () => {
     googleSign,
     logOut,
     user,
-    error
+    error,
+    isLoading
   }
 };
 

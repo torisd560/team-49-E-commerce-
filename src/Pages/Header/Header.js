@@ -26,10 +26,10 @@ const Header = () => {
                         <Nav.Link as={Link} to='/cart' ><i className="fas fa-shopping-cart custom-text-primary fs-5"></i><sup className="translate-middle badge rounded-pill bg-dark translate-middle-y">{cartList.length}</sup></Nav.Link>
                         {user.email &&
                             <div className=' d-flex justify-content-between align-items-center'>
-                               <img src={user.photoURL} alt="" className=' img-fluid' style ={{width : '40px', borderRadius : '50%'}} />
-                               <span className='fw-bold custom-text-primary ms-2'>{user.displayName}</span>
+                                <img src={user.photoURL} alt="" className=' img-fluid' style={{ width: '40px', borderRadius: '50%' }} />
+                                <span className='fw-bold custom-text-primary ms-2'>{user.displayName}</span>
                             </div>}
-                        {user.email ? <Nav.Link><i onClick ={logOut} className="fas fa-sign-in-alt custom-text-primary me-2 fs-5 "></i>LogOut</Nav.Link>
+                        {user.email ? <span onClick={logOut} className=' custom-cursor '><i className="fas fa-sign-out-alt custom-text-primary me-2 fs-5 "></i>LogOut</span>
                             :
                             <Nav.Link as={Link} to='/login'><i className="fas fa-sign-in-alt custom-text-primary me-2 fs-5"></i>Login</Nav.Link>}
                     </Nav>

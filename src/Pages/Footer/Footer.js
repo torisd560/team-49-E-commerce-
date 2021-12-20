@@ -1,6 +1,5 @@
 import React from 'react';
 import { Button, Container} from 'react-bootstrap';
-import footerLogo from '../../images/logo.png'
 import './Footer.css'
 
 const Footer = () => {
@@ -31,10 +30,7 @@ const Footer = () => {
                 </div>
                 <hr className='text-white' />
                 <div className="row text-center">
-                    <div className="col-md-4">
-                        <img src={footerLogo} alt="" style={{ width: '200px' }} className='img-fluid' />
-                    </div>
-                    <div className="col-md-8">
+                    <div className="col-md-12 col-sm-12">
                         <p className='text-center'>Copyright © 2021 | redux mecical instrument shop made by Lipi</p>
                     </div>
                 </div>

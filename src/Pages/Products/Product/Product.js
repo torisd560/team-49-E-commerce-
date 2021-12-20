@@ -10,15 +10,15 @@ const Product = ({ product }) => {
 
     return (
         <Col>
-            <Card className='text-center p-4'>
+            <Card className='text-center p-4 shadow-sm '>
                 <Card.Img variant="top" src={img} className=' img-fluid mx-auto' style={{ width: '200px', height: '200px' }} />
                 <Card.Title > {product_name} </Card.Title>
                 <div>
-                    <i class="fas fa-star-half-alt text-warning"></i>
-                    <i class="fas fa-star-half-alt text-warning"></i>
-                    <i class="fas fa-star-half-alt text-warning"></i>
-                    <i class="fas fa-star-half-alt text-warning"></i>
-                    <i class="fas fa-star-half-alt text-warning"></i>
+                    <i className="fas fa-star-half-alt text-warning"></i>
+                    <i className="fas fa-star-half-alt text-warning"></i>
+                    <i className="fas fa-star-half-alt text-warning"></i>
+                    <i className="fas fa-star-half-alt text-warning"></i>
+                    <i className="fas fa-star-half-alt text-warning"></i>
                 </div>
                 <Card.Body>
                     <div className=' d-flex justify-content-between align-items-center'>

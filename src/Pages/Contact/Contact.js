@@ -50,7 +50,7 @@ const Contact = () => {
                             </Col>
                             <Col xs={12} md={12} className='mb-5 d-flex '>
                                 <div>
-                                    <i class="fas fa-phone-alt custom-text-primary me-4" style={{ border: '2px solid black', borderRadius: '50%', padding: '20px' }}></i>
+                                    <i className="fas fa-phone-alt custom-text-primary me-4" style={{ border: '2px solid black', borderRadius: '50%', padding: '20px' }}></i>
                                 </div>
                                 <div>
                                     <h4 className='custom-text-primary fw-bold mb-4'>Call Us</h4>
