@@ -18,14 +18,14 @@ const Footer = () => {
                     </div>
                     <div className="col-md-4">
                         <h4 className='custom-text-warning mb-4'>Contact Info</h4>
-                        <p><i className="fas fa-phone-alt text-danger me-2"></i>(+62) 361 154875</p>
-                        <p><i className="fas fa-envelope me-2 text-danger"></i>contact@domain.com</p>
-                        <p><i className="fas fa-map-marker-alt me-2 text-danger"></i>Jl. Raya Ubud No.88, Bali 80571</p>
+                        <p><i className="fas fa-phone-alt text-white me-2"></i>(+62) 361 154875</p>
+                        <p><i className="fas fa-envelope me-2 text-white"></i>contact@domain.com</p>
+                        <p><i className="fas fa-map-marker-alt me-2 text-white"></i>Jl. Raya Ubud No.88, Bali 80571</p>
                     </div>
                     <div className="col-md-4">
                         <h4 className='custom-text-warning mb-4'>Make a Reservation</h4>
                         <p>Our Support and Sales team is available 24 /7 to answer your queries</p>
-                        <Button variant = "danger" className = 'rounded-pill'><i className="fas fa-phone-alt text-danger me-2"></i>(+62) 361 154875</Button>
+                        <Button variant = "light" className = 'rounded-pill'><i className="fas fa-phone-alt custom-text-primary me-2"></i>(+62) 361 154875</Button>
                     </div>
                 </div>
                 <hr className='text-white' />
