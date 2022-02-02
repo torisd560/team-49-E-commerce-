@@ -1,0 +1,26 @@
+.form-title{
+    color:#eb143a ;
+    font-size: 60px;
+    font-weight: 200;
+}
+.input-field input{
+ border-bottom: 1px solid gray;
+ border-left: 0;
+ border-right: 0;
+ border-top: 0;
+ border-radius: 0;
+}
+.input-level{
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+.input-icons i {
+    position: absolute;
+    padding: 10px;
+}
+  
+.input-icons {
+    width: 100%;
+    margin-bottom: 10px;
+}
+  
