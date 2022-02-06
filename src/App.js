@@ -1,26 +1,25 @@
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import './App.css';
+import Login from './Components/Login/Login'
+import Register from './Components/Register/Register'
+import Attachment from './Components/Attachment/Attachment';
 import Header from './Components/Header/Header';
-import Book from '../src/Components/Book/Book'
-import Destinations from '../src/Components/Destinations/Destinations'
-import FlyingClub from '../src/Components/FlyingClub/FlyingClub'
-import FlyWithUs from '../src/Components/FlyWithUs/FlyWithUs'
-import NotFound from './Components/NotFound/NotFound';
+import Footer from './Components/Footer/Footer'
 
 
 function App() {
   return (
-    <div >
-      <Router>
-        <Header />
+    <div className="">
+      <BrowserRouter>
+        <Header></Header>
         <Routes>
-          <Route path='/' element={<Book />} />
-          <Route path='book' element={<Book />} />
-          <Route path='destinations' element={<Destinations />} />
-          <Route path='flyingClub' element={<FlyingClub />} />
-          <Route path='flyUs' element={<FlyWithUs />} />
-          <Route path='*' element={<NotFound />} />
+          <Route path='/' element={<Attachment />} />
+          <Route path='login' element={<Login />} />
+          <Route path='register' element={<Register />} />
         </Routes>
-      </Router>
+        <Footer></Footer>
+      </BrowserRouter>
     </div>
   );
 }

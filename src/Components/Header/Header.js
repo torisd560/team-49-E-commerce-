@@ -1,30 +1,31 @@
 import React from 'react';
 import './Header.css'
-import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
+import { Container, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import navLogo from '../../images/vs-large-default.svg'
+import useFirebase from '../../hooks/useFirebase';
 
 const Header = () => {
+
+    const { user, logOut } = useFirebase();
     return (
         <div>
-            <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
-                <Container className='py-3'>
+            <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" className='p-4'>
+                <Container>
                     <Navbar.Brand href="#home">
-                        <img src={navLogo} alt="" className='img-fluid' style={{ width: '154px' }} />
+                        <i className ="fas fa-hamburger fs-3 text-warning me-2"></i> Burger House
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
-                        <Nav className="me-auto nav-item">
-                            <Nav.Link as={Link} to='book'>Book</Nav.Link>
-                            <Nav.Link as={Link} to='destinations'>Destinations</Nav.Link>
-                            <Nav.Link as={Link} to='flyUs'>Fly With Us</Nav.Link>
-                            <Nav.Link as={Link} to='flyingClub'>Flying Club</Nav.Link>
+                        <Nav className="ms-auto nav-item">
+                            {user.email &&
+                                <div className=' d-flex justify-content-between align-items-center'>
+                                    <img src={user.photoURL} alt="" className=' img-fluid' style={{ width: '40px', borderRadius: '50%' }} />
+                                    <span className='fw-bold text-white  ms-2'>{user.displayName}</span>
+                                </div>}
+                            {user.email ? <span onClick={logOut} className=' custom-cursor text-white '><i className="fas fa-sign-out-alt me-2 fs-5 "></i>LogOut</span>
+                                :
+                                <Nav.Link as={Link} to='/login'><i className="fas fa-sign-in-alt custom-text-primary me-2 fs-5"></i>Login</Nav.Link>}
                         </Nav>
-                        <NavDropdown title="India-English">
-                            <NavDropdown.Item href="#action/3.1">India</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.2">English</NavDropdown.Item>
-                            <NavDropdown.Divider />
-                        </NavDropdown>
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
