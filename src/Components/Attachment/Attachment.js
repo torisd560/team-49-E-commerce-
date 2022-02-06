@@ -34,36 +34,34 @@ const Attachment = () => {
                     <form onSubmit={handleSubmit} >
                         <h3 className='text-center custom-text-warning mt-5'>Place Order below</h3>
                         <div className="mb-3 my-5">
-                            <label htmlFor="exampleInputEmail1" className="form-label fw-bold"><i className="fas fa-user custom-text-warning me-2"></i>Name</label>
                             <input
                                 onBlur={handleOnblur}
-                                defaultValue={user.displayName}
+                                placeholder='Name'
                                 name="name"
                                 type="text"
                                 className="form-control"
                                 required />
                         </div>
                         <div className="mb-3">
-                            <label htmlFor="exampleInputEmail1" className="form-label fw-bold"><i className="fas fa-envelope-open custom-text-warning me-2"></i>E-mail</label>
                             <input
                                 onBlur={handleOnblur}
                                 defaultValue={user.email}
+                                placeholder='Email'
                                 name="email"
                                 type="email"
                                 className="form-control"
                                 required />
                         </div>
                         <div className="mb-3">
-                            <label htmlFor="exampleInputPassword1" className="form-label fw-bold"><i className="fas fa-map-marker-alt custom-text-warning me-2"></i>Address</label>
                             <input
                                 onBlur={handleOnblur}
                                 name="address"
+                                placeholder="Address"
                                 type="adrress"
                                 className="form-control"
                                 required />
                         </div>
                         <div className="mb-3">
-                            <label htmlFor="exampleInputPassword1" className="form-label fw-bold"><i className="fas fa-dollar-sign custom-text-warning me-2"></i> Price</label>
                             <input
                                 onBlur={handleOnblur}
                                 name="item-price"
@@ -74,7 +72,6 @@ const Attachment = () => {
                             />
                         </div>
                         <div className="mb-3">
-                            <label htmlFor="exampleInputPassword1" className="form-label fw-bold"><i className="fas fa-hamburger custom-text-warning me-2"></i>Item</label>
                             <input
                                 onBlur={handleOnblur}
                                 type="text"
@@ -84,7 +81,7 @@ const Attachment = () => {
                                 required
                             />
                         </div>
-                        <Button type="submit" variant="warning" className=" text-dark fw-bold">Order Now</Button>
+                        <Button type="submit" variant="warning" className=" text-dark fw-600 mt-4">Order Now</Button>
                     </form>
                 </div>
             </Col>
