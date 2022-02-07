@@ -6,21 +6,26 @@ import Register from './Components/Register/Register'
 import Attachment from './Components/Attachment/Attachment';
 import Header from './Components/Header/Header';
 import Footer from './Components/Footer/Footer'
+import AuthProvider from './context/AuthProvider';
+import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 
 
 function App() {
   return (
-    <div className="">
+    <AuthProvider>
       <BrowserRouter>
         <Header></Header>
         <Routes>
-          <Route path='/' element={<Attachment />} />
+          <Route path='/' element={< Login />} />
           <Route path='login' element={<Login />} />
           <Route path='register' element={<Register />} />
+          <Route path='attachment' element={<PrivateRoute>
+            <Attachment />
+          </PrivateRoute>} />
         </Routes>
         <Footer></Footer>
       </BrowserRouter>
-    </div>
+    </AuthProvider>
   );
 }
 

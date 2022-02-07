@@ -1,14 +1,16 @@
 import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
-import useFirebase from '../../hooks/useFirebase';
+import { Link, useNavigate } from 'react-router-dom';
+import useAuth from '../../hooks/useAuth';
 
 const Register = () => {
 
     const [registerData, setRegisterData] = useState({})
 
 
-    const { user, error, registerEmailPassword, setUserName } = useFirebase();
+    const { error, registerEmailPassword, setUserName } = useAuth();
+
+    const navigate = useNavigate();
 
     const handleOnblur = e => {
         const field = e.target.type;
@@ -20,15 +22,16 @@ const Register = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        registerEmailPassword(registerData.email, registerData.password)
+        registerEmailPassword(registerData.email, registerData.password, navigate)
         setUserName(registerData.text)
+        e.target.value = " "
     }
 
 
     return (
-        <div className='w-50 mx-auto'>
+        <div className='w-50 mx-auto my-5'>
             <form onSubmit={handleSubmit} >
-                <h3 className='text-center text-primary mt-5'>Please Sign Up <span>{user.displayName}</span></h3>
+                <h3 className='text-center text-primary mt-5'>Please Sign Up</h3>
                 <div className="mb-3 my-5">
                     <label htmlFor="exampleInputEmail1" className="form-label"><i className="fas fa-user text-primary me-2"></i>Full Name</label>
                     <input

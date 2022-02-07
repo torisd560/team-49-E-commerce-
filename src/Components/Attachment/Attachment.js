@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { Button, Col, Row } from 'react-bootstrap';
-import useFirebase from '../../hooks/useFirebase';
+import useAuth from '../../hooks/useAuth';
 import burgerImg from '../../images/burger.jpg'
 
 const Attachment = () => {
 
     const [burgerData, setBurgerData] = useState({})
-    const { user } = useFirebase()
+    const { user } = useAuth();
 
     const handleOnblur = e => {
         const field = e.target.name;
@@ -36,6 +36,7 @@ const Attachment = () => {
                         <div className="mb-3 my-5">
                             <input
                                 onBlur={handleOnblur}
+                                defaultValue={user.displayName}
                                 placeholder='Name'
                                 name="name"
                                 type="text"
