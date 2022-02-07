@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import { Button, Col, Row } from 'react-bootstrap';
 import useAuth from '../../hooks/useAuth';
 import burgerImg from '../../images/burger.jpg'
+import { collection, addDoc } from "firebase/firestore";
 
-const Attachment = () => {
+
+const Attachment = ({ db }) => {
 
     const [burgerData, setBurgerData] = useState({})
     const { user } = useAuth();
@@ -16,10 +18,26 @@ const Attachment = () => {
         setBurgerData(newBurgerData)
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault()
-        console.log(burgerData)
+
+        await addDoc(collection(db, "burger-order-information"), {
+
+            name: burgerData.name,
+            email: user.email,
+            address: burgerData.address,
+            item_price: burgerData.item_price,
+            item_name: burgerData.item_name
+        })
+            .then((res) => {
+                alert(" Successfully data stored in firebase")
+            })
+            .catch((res) => {
+                alert(" Data can't stored in firebase")
+            })
     }
+
+
     return (
         <Row xs={12} md={2} className='mx-0 my-5 d-flex align-items-center '>
             <Col className='text-center'>
@@ -65,7 +83,7 @@ const Attachment = () => {
                         <div className="mb-3">
                             <input
                                 onBlur={handleOnblur}
-                                name="item-price"
+                                name="item_price"
                                 defaultValue={'15'}
                                 type="text"
                                 className="form-control"
@@ -76,13 +94,13 @@ const Attachment = () => {
                             <input
                                 onBlur={handleOnblur}
                                 type="text"
-                                name="item-name"
+                                name="item_name"
                                 defaultValue={'The Real Burger'}
                                 className="form-control"
                                 required
                             />
                         </div>
-                        <Button type="submit" variant="warning" className=" text-dark fw-600 mt-4">Order Now</Button>
+                        <Button type="submit" variant="warning" className=" text-dark fw-600 mt-4">Submit</Button>
                     </form>
                 </div>
             </Col>

@@ -1,29 +1,31 @@
+import { initializeApp } from "firebase/app";
+import firebaseConfig from './Firebase/firebase.config'
+import { getFirestore } from "firebase/firestore";
 
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import './App.css';
 import Login from './Components/Login/Login'
 import Register from './Components/Register/Register'
-import Attachment from './Components/Attachment/Attachment';
-import Header from './Components/Header/Header';
-import Footer from './Components/Footer/Footer'
 import AuthProvider from './context/AuthProvider';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
+import AttachmentContainer from "./Components/Attachment/AttachmentContainer/AttachmentContainer";
 
 
 function App() {
+
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app)
+
   return (
     <AuthProvider>
       <BrowserRouter>
-        <Header></Header>
         <Routes>
           <Route path='/' element={< Login />} />
           <Route path='login' element={<Login />} />
           <Route path='register' element={<Register />} />
           <Route path='attachment' element={<PrivateRoute>
-            <Attachment />
+            <AttachmentContainer db={db} />
           </PrivateRoute>} />
         </Routes>
-        <Footer></Footer>
       </BrowserRouter>
     </AuthProvider>
   );

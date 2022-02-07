@@ -29,7 +29,7 @@ const Register = () => {
 
 
     return (
-        <div className='w-50 mx-auto my-5'>
+        <div className='w-50 mx-auto'>
             <form onSubmit={handleSubmit} >
                 <h3 className='text-center text-primary mt-5'>Please Sign Up</h3>
                 <div className="mb-3 my-5">

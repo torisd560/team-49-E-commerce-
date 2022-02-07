@@ -1,6 +1,6 @@
 # Simple firebase data stored project.
 
-Live link (https://github.com/facebook/create-react-app).
+Live link (https://devsoft-task-burger-house.netlify.app)
 
 ## Technology use : 
 

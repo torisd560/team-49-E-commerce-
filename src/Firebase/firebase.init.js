@@ -1,8 +1,11 @@
-import firebaseConfig from "./firebase.config";
-import { initializeApp } from "firebase/app";
+// import firebaseConfig from "./firebase.config";
+// import { initializeApp } from "firebase/app";
+// // import getFirestore from 'firebase/firestore/lite'
 
-const initializeFirebaseAuth = () => {
-    initializeApp(firebaseConfig);
-}
+// const initializeFirebaseAuth = () => {
+//     initializeApp(firebaseConfig);
+// }
 
-export default initializeFirebaseAuth;
+// // const db = getFirestore(initializeApp(firebaseConfig))
+
+// export default initializeFirebaseAuth;
