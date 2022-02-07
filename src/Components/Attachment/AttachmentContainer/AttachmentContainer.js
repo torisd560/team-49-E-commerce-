@@ -3,11 +3,11 @@ import Footer from '../../Footer/Footer';
 import Header from '../../Header/Header';
 import Attachment from '../Attachment';
 
-const AttachmentContainer = () => {
+const AttachmentContainer = ({db}) => {
     return (
         <div>
             <Header />
-            <Attachment />
+            <Attachment db={db} />
             <Footer />
         </div>
     );
