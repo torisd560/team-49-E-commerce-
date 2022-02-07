@@ -12,7 +12,10 @@ import AttachmentContainer from "./Components/Attachment/AttachmentContainer/Att
 
 function App() {
 
+  // initialize firebase
   const app = initializeApp(firebaseConfig);
+  
+  // firebase database initialize
   const db = getFirestore(app)
 
   return (
