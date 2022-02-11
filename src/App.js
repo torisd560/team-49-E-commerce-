@@ -1,36 +1,24 @@
-import { initializeApp } from "firebase/app";
-import firebaseConfig from './Firebase/firebase.config'
-import { getFirestore } from "firebase/firestore";
-
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Login from './Components/Login/Login'
-import Register from './Components/Register/Register'
-import AuthProvider from './context/AuthProvider';
-import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
-import AttachmentContainer from "./Components/Attachment/AttachmentContainer/AttachmentContainer";
-
+import logo from './logo.svg';
+import './App.css';
 
 function App() {
-
-  // initialize firebase
-  const app = initializeApp(firebaseConfig);
-  
-  // firebase database initialize
-  const db = getFirestore(app)
-
   return (
-    <AuthProvider>
-      <BrowserRouter>
-        <Routes>
-          <Route path='/' element={< Login />} />
-          <Route path='login' element={<Login />} />
-          <Route path='register' element={<Register />} />
-          <Route path='attachment' element={<PrivateRoute>
-            <AttachmentContainer db={db} />
-          </PrivateRoute>} />
-        </Routes>
-      </BrowserRouter>
-    </AuthProvider>
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
+    </div>
   );
 }
 
